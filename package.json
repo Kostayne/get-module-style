@@ -1,10 +1,9 @@
 {
   "name": "get-module-style",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "This package helps you to work with module css and scss (sass)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "type": "module",
   "scripts": {
     "build": "tsc",
     "test": "jest"

@@ -5,7 +5,7 @@
         "outDir": "lib",
         "declaration": true,
         "target": "ES5",
-        "module": "es2020",
+        "module": "commonjs",
         "moduleResolution": "node",
         "sourceMap": true,
         "rootDir": "src"
