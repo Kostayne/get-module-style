@@ -1,10 +1,7 @@
 # GetModuleStyle
 NPM Package, that helps you use modules css in your code.
 
-<div style="display: flex; justify-content: center; padding-bottom: 15px">
-<!-- ![Logo](./logo.jpg) -->
-    <img src="./logo.jpg"/>
-</div>
+![Logo](./logo.jpg)
 
 ![npm](https://img.shields.io/npm/v/get-module-style?color=green) <!-- version -->
 ![npm](https://img.shields.io/bundlephobia/min/get-module-style?color=green) <!-- size -->
