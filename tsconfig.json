@@ -1,0 +1,13 @@
+{
+    "exclude": ["node_modules"],
+    "include": ["src/index.ts"],
+    "compilerOptions": {
+        "outDir": "lib",
+        "declaration": true,
+        "target": "ES5",
+        "module": "es2020",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "rootDir": "src"
+    }
+}
