@@ -9,7 +9,7 @@ NPM Package, that helps you use modules css in your code.
 ![npm](https://img.shields.io/npm/l/get-module-style?color=green ) <!-- licence -->
 
 ## Package idea
-Always have to write styles['class'], is it really good solition? No, it's not. 
+Always have to write styles['class'], is it really good solution? No, it's not. 
 
 ``` tsx
 import * as styles from "./styles.module.scss";
