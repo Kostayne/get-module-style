@@ -8,26 +8,23 @@ NPM Package, that helps you use modules css in your code.
 ![npm](https://img.shields.io/npm/dm/get-module-style?color=green) <!-- downloads -->
 ![npm](https://img.shields.io/npm/l/get-module-style?color=green ) <!-- licence -->
 
-## Before this package
-Always have to write styles["class"] and join it with "" + "" or `${} ${}`. So awful!
-
-``` ts
-import * as styles from "./styles.module.scss";
-
-<span className={`${styles["text"]} ${styles["text_big"]} ${styles["text_marked"]}`}>
-Big marked text here...
-</span>
-```
-
-## After
-Just import the lib!
+## Package idea
+Always have to write styles['class'], is it really good solition? No, it's not. 
 
 ``` tsx
 import * as styles from "./styles.module.scss";
-import { createModuleStylesConverter } from "get-module-style"
 
-// getStyle
+// BAD
+styles.class + styles.class-two;
+`${styles.class} ${styles.class-two}`;
+
+<span className={`${styles['text']} ${styles['text_big']} ${styles['text_marked']}`}>
+    Big marked text here...
+</span>
+
+// GOOD
 const gs = createModuleStylesConverter(styles);
+gs('class class-two');
 
 <span className={gs("text text_big text_marked")}>Big marked text here...</span>
 ```
@@ -38,5 +35,5 @@ const gs = createModuleStylesConverter(styles);
     npm i get-module-style
 
 ## Contributing
-Want to collaborate or change the package? 
+Want to collaborate? 
 :octocat: <a href="https://github.com/Kostayne/get-module-style">Check my github</a>
