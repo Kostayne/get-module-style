@@ -15,8 +15,8 @@ Always have to write styles['class'], is it really good solution? No, it's not.
 import * as styles from "./styles.module.scss";
 
 // BAD
-styles.class + styles.class-two;
-`${styles.class} ${styles.class-two}`;
+styles.class + ' ' + styles.['class-two'];
+`${styles.class} ${styles['class-two']} ${styles.['class-three']}`;
 
 <span className={`${styles['text']} ${styles['text_big']} ${styles['text_marked']}`}>
     Big marked text here...
@@ -24,15 +24,23 @@ styles.class + styles.class-two;
 
 // GOOD
 const gs = createModuleStylesConverter(styles);
-gs('class class-two');
+gs('class class-two'); // provide all styles in a string OR
+gs('class', 'class-two'); // provide styles in multiple strings OR
+gs('class', 'class-two class-three') // provide using mix of two types above
 
-<span className={gs("text text_big text_marked")}>Big marked text here...</span>
+<span className={gs('text text_big text_marked')}>Big marked text here...</span>
 ```
 
 ## Install
-:package: To install this package use npm
+:package: To install this package use npm or yarn
 
+``` bash
+    # Npm
     npm i get-module-style
+
+    #Yarn
+    yarn add get-module-style
+```
 
 ## Contributing
 Want to collaborate? 

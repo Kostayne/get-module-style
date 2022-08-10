@@ -1,6 +1,6 @@
 {
   "name": "get-module-style",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "This package helps you to work with module css and scss (sass)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -9,11 +9,12 @@
     "test": "jest"
   },
   "keywords": [
-    "modules",
-    "next",
     "react",
     "css",
-    "sass"
+    "sass",
+    "classNames",
+    "styles",
+    "moduleStyles"
   ],
   "files": [
     "lib"
