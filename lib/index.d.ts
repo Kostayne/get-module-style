@@ -1,1 +1,1 @@
-export declare function createModuleStylesConverter(styles: any): (...classNames: string[]) => string;
+export declare function createModuleStylesConverter(styles?: Record<string, string>): (...classNames: (string | Record<string, boolean>)[]) => string;
