@@ -28,6 +28,7 @@ const gs = createModuleStylesConverter(styles);
 gs('class class-two'); // provide all styles in a string OR
 gs('class', 'class-two'); // provide styles in multiple strings OR
 gs('class', 'class-two class-three') // provide using mix of two types above
+gs('class', 'class-two', {'class-three': true}) // provide using object with boolean
 
 <span className={gs('text text_big text_marked')}>Big marked text here...</span>
 ```
