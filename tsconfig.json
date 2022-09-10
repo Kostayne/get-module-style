@@ -1,6 +1,6 @@
 {
     "exclude": ["node_modules"],
-    "include": ["src/index.ts"],
+    "include": ["src"],
     "compilerOptions": {
         "outDir": "lib",
         "declaration": true,

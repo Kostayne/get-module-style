@@ -13,7 +13,7 @@ Always have to write construction like styles['class'], is it really good soluti
 
 ``` tsx
 import * as styles from './styles.module.scss';
-import { createModuleStylesConverter } from 'get-module-style';
+import { createGms, gs } from 'get-module-style';
 
 // BAD
 styles.class + ' ' + styles.['class-two'];
@@ -24,7 +24,7 @@ styles.class + ' ' + styles.['class-two'];
 </span>
 
 // GOOD
-const gs = createModuleStylesConverter(styles);
+const gms = createGms(styles);
 gs('class class-two'); // provide all styles in a string OR
 gs('class', 'class-two'); // provide styles in multiple strings OR
 gs('class', 'class-two class-three') // provide using mix of two types above
@@ -33,15 +33,53 @@ gs('class', 'class-two', {'class-three': true}) // provide using object with boo
 <span className={gs('text text_big text_marked')}>Big marked text here...</span>
 ```
 
+## Usage
+Get style function (gs) used to concatenate global class names. Just import it like that:
+
+```tsx
+import { gs } from 'get-module-style';
+<span classNames={gs('red', 'big bold', { hidden: false })}></span>
+```
+
+Get module style function (gms) is a constructor, that accepts two arguments: object with classes (module css) and optional parameters.
+```ts
+import css from './styles.module.scss';
+import { createGms } from 'get-module-style';
+
+const gms = createGms(css);
+<span classNames={gms('red', 'big bold', { hidden: false })}></span>
+```
+
+Gms options:
+```ts
+// emulating module css
+const css = {
+    'red': 'red_HASH',
+}
+
+const options = {
+    // Includes class names that are not presented in provided module styles 
+    allowExternalClassNames?: boolean; // (true by default)
+};
+
+const gms = createGms(css, options);
+
+// when allowExternalClassNames true
+gms('not-existing red'); // will return 'not-existing red_HASH'
+
+// when allowExternalClassNames false
+gms('not-existing red'); // will return red_HASH'
+```
+
 ## Install
 :package: To install this package use npm or yarn
 
 ``` bash
-    # npm
-    npm i get-module-style
+# npm
+npm i get-module-style
 
-    # yarn
-    yarn add get-module-style
+# yarn
+yarn add get-module-style
 ```
 
 ## Contributing

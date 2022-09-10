@@ -1,16 +1,41 @@
-export function createModuleStylesConverter(styles?: Record<string, string>) {
+import { GsmOptions } from './types/gsm_options';
+import { GsClassNameKeyType } from './types/gs_classname_key';
+import { getClassNameKeys } from './utils/get_class_name_keys';
+
+function concatIntoStr(classes: string[]) {
+    return classes.join(' ');
+}
+
+export function gs(...classNames: GsClassNameKeyType[]) {
+    const keys = getClassNameKeys(classNames);
+    return concatIntoStr(keys);
+}
+
+const defaultGsmOptions: GsmOptions = {
+    allowExternalClassNames: true,
+};
+
+export function createGsm(styles: Record<string, string>, options: GsmOptions = defaultGsmOptions) {
     if (!styles) throw 'There is no styles provided (null or undefined)';
     const closureStyles = styles;
 
-    return (...classNames: (string | Record<string, boolean>)[]) => {
-        const splitted = classNames.flatMap(cname =>
-            typeof cname === 'string'
-                ? cname.split(' ')
-                : Object.entries(cname)
-                    .filter(([_key, value]) => value)
-                    .map(([key]) => key),
-        );
-        const styled = splitted.map(val => closureStyles[val] ?? val);
-        return styled.join(' ');
+    return (...classNames: GsClassNameKeyType[]) => {
+        const keys = getClassNameKeys(classNames);
+        const resultClassNames: string[] = [];
+
+        for (const k of keys) {
+            const moduleCname = closureStyles[k];
+
+            if (moduleCname) {
+                resultClassNames.push(moduleCname);
+                continue;
+            }
+
+            if (options.allowExternalClassNames) {
+                resultClassNames.push(k);
+            }
+        }
+        
+        return concatIntoStr(resultClassNames);
     };
 }
