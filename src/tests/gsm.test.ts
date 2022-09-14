@@ -1,4 +1,4 @@
-import { createGsm } from "../index";
+import { createGms } from "../index";
 
 describe('gsm function test', () => {
     it('returns module classNames by it\'s keys', () => {
@@ -8,14 +8,14 @@ describe('gsm function test', () => {
             big: 'big_HASH',
         };
 
-        const gsm = createGsm(styles);
+        const gsm = createGms(styles);
         const classNames = gsm('text red big');
 
         expect(classNames).toBe('text_HASH red_HASH big_HASH');
     });
 
     it('throws exception when no styles provided', () => {
-        expect(() => createGsm(undefined)).toThrow();
+        expect(() => createGms(undefined)).toThrow();
     });
 
     it('allowExternalClassNames option works (true)', () => {
@@ -25,7 +25,7 @@ describe('gsm function test', () => {
             big: 'big_HASH',
         };
 
-        const gsm = createGsm(styles);
+        const gsm = createGms(styles);
         const classNames = gsm('text', 'red', 'big', 'small', 'green');
 
         expect(classNames).toBe('text_HASH red_HASH big_HASH small green');
@@ -38,7 +38,7 @@ describe('gsm function test', () => {
             big: 'big_HASH',
         };
 
-        const gsm = createGsm(styles, {
+        const gsm = createGms(styles, {
             allowExternalClassNames: false,
         });
 

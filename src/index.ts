@@ -15,7 +15,7 @@ const defaultGsmOptions: GsmOptions = {
     allowExternalClassNames: true,
 };
 
-export function createGsm(styles: Record<string, string>, options: GsmOptions = defaultGsmOptions) {
+export function createGms(styles: Record<string, string>, options: GsmOptions = defaultGsmOptions) {
     if (!styles) throw 'There is no styles provided (null or undefined)';
     const closureStyles = styles;
 

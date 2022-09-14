@@ -42,7 +42,7 @@ import { gs } from 'get-module-style';
 ```
 
 Get module style function (gms) is a constructor, that accepts two arguments: object with classes (module css) and optional parameters.
-```ts
+```tsx
 import css from './styles.module.scss';
 import { createGms } from 'get-module-style';
 
@@ -50,8 +50,8 @@ const gms = createGms(css);
 <span classNames={gms('red', 'big bold', { hidden: false })}></span>
 ```
 
-Gms options:
-```ts
+## Gms options:
+```tsx
 // emulating module css
 const css = {
     'red': 'red_HASH',
