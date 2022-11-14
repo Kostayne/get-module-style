@@ -1,6 +1,6 @@
 {
   "name": "get-module-style",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "This package helps you to work with module css and scss (sass)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -32,7 +32,6 @@
     "@types/jest": "^26.0.23",
     "jest": "^27.0.6"
   },
-
   "jest": {
     "testMatch": [
       "**/*.test.ts"

@@ -8,6 +8,17 @@ NPM Package, that helps you use module css in your code.
 ![npm](https://img.shields.io/npm/dm/get-module-style?color=green) <!-- downloads -->
 ![npm](https://img.shields.io/npm/l/get-module-style?color=green ) <!-- licence -->
 
+## Install
+:package: To install this package use npm or yarn
+
+``` bash
+# npm
+npm i get-module-style
+
+# yarn
+yarn add get-module-style
+```
+
 ## Package idea
 Always have to write construction like styles['class'], is it really good solution? No, it's not!
 
@@ -69,17 +80,6 @@ gms('not-existing red'); // will return 'not-existing red_HASH'
 
 // when allowExternalClassNames false
 gms('not-existing red'); // will return red_HASH'
-```
-
-## Install
-:package: To install this package use npm or yarn
-
-``` bash
-# npm
-npm i get-module-style
-
-# yarn
-yarn add get-module-style
 ```
 
 ## Contributing
