@@ -8,7 +8,7 @@ export function getClassNameKeys(classNames: GsClassNameKeyType[]) {
 
             case 'object':
                 return Object.entries(cname)
-                    // if cnameKeyValue equals to false, it will be filtered
+                    // if cnameKeyValue equals to false | null | undefined, it will be filtered
                     .filter(([_cnameKey, cnameKeyValue]) => cnameKeyValue)
 
                     // array first element destructure

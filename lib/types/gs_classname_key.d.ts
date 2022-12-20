@@ -1,1 +1,1 @@
-export declare type GsClassNameKeyType = (string | Record<string, string> | Record<string, boolean> | undefined);
+export declare type GsClassNameKeyType = (string | Record<string, string> | Record<string, boolean> | Record<string, undefined> | Record<string, null> | undefined);

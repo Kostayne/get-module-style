@@ -20,4 +20,14 @@ describe('gs function test', () => {
         const classNames = gs('text', { red: false }, { big: true });
         expect(classNames).toBe('text big');
     });
+
+    it('works with object like { className: undefined }', () => {
+        const classNames = gs('text', { red: undefined }, { big: true });
+        expect(classNames).toBe('text big');
+    });
+
+    it('works with object like { className: null }', () => {
+        const classNames = gs('text', { red: null}, { big: true });
+        expect(classNames).toBe('text big');
+    });
 });
