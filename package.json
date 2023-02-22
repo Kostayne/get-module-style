@@ -1,13 +1,13 @@
 {
   "name": "get-module-style",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "This package helps you to work with module css and scss (sass)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "prepublish": "npm run build && npm run test"
+    "prepublishOnly": "npm run build && npm run test"
   },
   "keywords": [
     "react",

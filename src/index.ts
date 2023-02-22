@@ -1,4 +1,4 @@
-import { GsmOptions } from './types/gsm_options';
+import { GsmOptions } from './types/gms_options';
 import { GsClassNameKeyType } from './types/gs_classname_key';
 import { getClassNameKeys } from './utils/get_class_name_keys';
 

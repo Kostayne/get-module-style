@@ -1,6 +1,6 @@
 import { createGms } from "../index";
 
-describe('gsm function test', () => {
+describe('gms function test', () => {
     it('returns module classNames by it\'s keys', () => {
         const styles = {
             text: 'text_HASH',
